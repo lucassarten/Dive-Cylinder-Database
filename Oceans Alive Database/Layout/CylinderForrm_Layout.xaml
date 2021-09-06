@@ -1,0 +1,161 @@
+﻿<Page x:Class="Database.CylinderForrm_Layout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Database"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="CylinderForrm_Layout">
+
+    <Grid Width="1920" Height="1080">
+        <Frame x:Name="CylinderForm">
+            <Frame.Content>
+                <Grid Uid="Cylinder / Document of Certification"  Width="1920" Height="1080" Background="#ffffffff" ClipToBounds="True" >
+                    <Canvas x:Name="Header"  Width="1920" Height="167" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Canvas  Width="1920" Height="53" Canvas.Left="0" Canvas.Top="69" >
+                            <Border  Width="1920" Height="53" Background="#ff094e7d" BorderBrush="#ff707070" Canvas.Left="0" Canvas.Top="0"  />
+                            <Button x:Name="Button_Courses" Content="COURSES" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Click="Button_Courses_Click" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Canvas.Left="510">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,8,34,8" ContentSource="Content" Height="37" Width="106" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="Button_Cylinders" Content="CYLINDERS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="170" Click="Button_Cylinders_Click" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="Button_Customers" Content="CUSTOMERS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Click="Button_Customers_Click" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="Button_Documents" Content="DOCUMENTS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="340" Click="Button_Documents_Click" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,10,4,10" ContentSource="Content" Width="151" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Line  X1="0" Y1="0" X2="0" Y2="53.1" Stroke="#ffffffff" Canvas.Left="170"  />
+                            <Line  X1="0" Y1="0" X2="0" Y2="53" Stroke="#ffffffff" Canvas.Left="340"  />
+                            <Line  X1="0" Y1="0" X2="0" Y2="53.1" Stroke="#ffffffff" Canvas.Left="510"  />
+                            <Line  X1="0" Y1="0" X2="0" Y2="53.1" Stroke="#ffffffff" Canvas.Left="680"  />
+                        </Canvas>
+                        <Border  Width="1920" Height="69" BorderBrush="#ff707070" Canvas.Left="0" Canvas.Top="0"  >
+                            <Image Margin="0,0,0,-0.2" Source="Image3.png" Stretch="Fill"/>
+                        </Border>
+                    </Canvas>
+                    <Label Content="CYLINDER/DOCUMENT OF CERTIFICATION&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="31,129,0,0" VerticalAlignment="Top" Height="38" Width="384" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Test_Date" HorizontalAlignment="Left" Height="40" Margin="256,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Test Date" HorizontalAlignment="Left" Margin="31,209,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Periodic_Certificate_Num" HorizontalAlignment="Left" Height="40" Margin="256,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Periodic Certificate #" HorizontalAlignment="Left" Margin="31,259,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Customer_Name" HorizontalAlignment="Left" Height="40" Margin="256,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Name" HorizontalAlignment="Left" Margin="31,344,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Customer_Phone" HorizontalAlignment="Left" Height="40" Margin="256,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Phone Number" HorizontalAlignment="Left" Margin="31,394,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Customer_Email" HorizontalAlignment="Left" Height="40" Margin="256,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="31,444,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Customer_Address" HorizontalAlignment="Left" Height="40" Margin="256,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Address" HorizontalAlignment="Left" Margin="31,494,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Specifications" HorizontalAlignment="Left" Height="40" Margin="256,580,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Cylinder Specifications" HorizontalAlignment="Left" Margin="31,580,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Material" HorizontalAlignment="Left" Height="40" Margin="256,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Aluminium / Steel" HorizontalAlignment="Left" Margin="31,630,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Serial_Num" HorizontalAlignment="Left" Height="40" Margin="256,730,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Serial #" HorizontalAlignment="Left" Margin="31,730,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_LAB_Num" HorizontalAlignment="Left" Height="40" Margin="256,780,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="LAB #" HorizontalAlignment="Left" Margin="31,780,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Manufacturer" HorizontalAlignment="Left" Height="40" Margin="790,580,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Name of manufacturer" HorizontalAlignment="Left" Margin="565,580,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Manufacture_Date" HorizontalAlignment="Left" Height="40" Margin="790,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Date of manufacture" HorizontalAlignment="Left" Margin="565,630,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Colour" HorizontalAlignment="Left" Height="40" Margin="790,680,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Colour" HorizontalAlignment="Left" Margin="565,680,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Water_Capacity" HorizontalAlignment="Left" Height="40" Margin="790,730,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Water capacity" HorizontalAlignment="Left" Margin="565,730,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_Cylinder_Operating_Pressure" HorizontalAlignment="Left" Height="40" Margin="790,780,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="Operating pressure" HorizontalAlignment="Left" Margin="565,780,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <Label Content="External Examination" HorizontalAlignment="Left" Margin="565,209,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <Label Content="Visual Examination" HorizontalAlignment="Left" Margin="565,259,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <Label Content="Hydrostatic Test" HorizontalAlignment="Left" Margin="565,308,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <Label Content="ROC Fitted" HorizontalAlignment="Left" Margin="565,358,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <TextBox x:Name="TextBoxDocument_ROC_Colour" HorizontalAlignment="Left" Height="40" Margin="795,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Label Content="ROC Colour" HorizontalAlignment="Left" Margin="565,444,0,0" VerticalAlignment="Top" Height="40" Width="225" FontSize="20"/>
+                    <Button Content="Save" HorizontalAlignment="Left" Margin="364,184,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click"/>
+                    <CheckBox x:Name="CheckBoxDocument_External_Examination" HorizontalAlignment="Left" Margin="794,215,0,0" VerticalAlignment="Top" Height="15" Width="16">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <CheckBox x:Name="CheckBoxDocument_Visual_Examination" HorizontalAlignment="Left" Margin="794,265,0,0" VerticalAlignment="Top" Height="15" Width="16">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <CheckBox x:Name="CheckBoxDocument_Hydrostatic_Test" HorizontalAlignment="Left" Margin="794,313,0,0" VerticalAlignment="Top" Height="15" Width="16">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <CheckBox x:Name="CheckBoxDocument_ROC_Fitted" HorizontalAlignment="Left" Margin="794,364,0,0" VerticalAlignment="Top" Height="15" Width="16">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <Button Content="Discard" HorizontalAlignment="Left" Margin="444,184,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDiscard_Click"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="257,830,0,0" TextWrapping="Wrap" Text="Fields marked with * are required" VerticalAlignment="Top" Height="17" Width="180" Foreground="Red" FontSize="12"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="520,219,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Height="21" Width="14" Foreground="Red" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="520,355,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Height="21" Width="14" Foreground="Red" FontSize="20"/>
+                </Grid>
+            </Frame.Content>
+        </Frame>
+    </Grid>
+</Page>

@@ -1,0 +1,24 @@
+﻿<Window x:Class="Database.EmailDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Database"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Send Emails" Height="375" Width="969">
+    <Grid>
+        <TextBox x:Name="TextBoxEmailBody" HorizontalAlignment="Left" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="289" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="570"/>
+        <TextBox x:Name="TextBoxEmailTitle" HorizontalAlignment="Left" Height="23" Margin="64,10,0,0" TextWrapping="Wrap" Text="Notice From " VerticalAlignment="Top" Width="230"/>
+        <DataGrid x:Name="customersDataGrid_OverdueEmail" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="585,38,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="CustomersDataGrid_OverdueEmail_Loaded"  RowHeight="30" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Height="289">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="customer_NameColumn1" Binding="{Binding Document_Customer_Name}" Header="Name" IsReadOnly="False"  Width="150"/>
+                <DataGridTextColumn x:Name="customer_EmailColumn1" Binding="{Binding Document_Customer_Email}" Header="Email" IsReadOnly="False"  Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Subject" VerticalAlignment="Top" Height="23" Width="49" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="585,10,0,0" TextWrapping="Wrap" Text="Recipients" VerticalAlignment="Top" Height="23" Width="68" FontSize="14"/>
+        <Button x:Name="ButtonSendMail" Content="Send Emails" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSendMail_Click" Height="23"/>
+
+    </Grid>
+</Window>

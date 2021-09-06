@@ -1,0 +1,179 @@
+﻿<Page x:Class="Database.CustomerDetails_Layout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Database"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomerDetails_Layout" Width="1920" Height="1080" GotFocus="Page_GotFocus" GotMouseCapture="Page_GotMouseCapture">
+    <Page.Resources>
+        <local:DatabaseDataSet x:Key="databaseDataSet"/>
+        <CollectionViewSource x:Key="customersViewSource" Source="{Binding Customers, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="coursesViewSource" Source="{Binding Courses, Source={StaticResource databaseDataSet}}"/>
+    </Page.Resources>
+
+    <Grid Width="1920" Height="1080" Loaded="Grid_Loaded_1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="407*"/>
+            <RowDefinition Height="673*"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="CustomersDetails" Grid.RowSpan="2" GotFocus="CustomersDetails_GotFocus">
+            <Frame.Content>
+                <Grid Uid="List Layout" Background="#ffffffff" ClipToBounds="True" DataContext="{StaticResource customersViewSource}" Loaded="Grid_Loaded" GotFocus="Grid_GotFocus" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1037*"/>
+                        <RowDefinition Height="45*"/>
+                    </Grid.RowDefinitions>
+                    <Button Content="Save" HorizontalAlignment="Left" Margin="219,147,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click" Height="20"/>
+                    <TextBox x:Name="TextBoxCustomer_Name" HorizontalAlignment="Left" Height="40" Margin="111,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <TextBox x:Name="TextBoxCustomer_Email" HorizontalAlignment="Left" Height="40" Margin="111,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <TextBox x:Name="TextBoxCustomer_Phone" HorizontalAlignment="Left" Height="40" Margin="111,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <TextBox x:Name="TextBoxCustomer_Address" HorizontalAlignment="Left" Height="40" Margin="111,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" TextChanged="TextBox1_TextChanged"/>
+                    <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="560,241,0,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="560,286,0,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    <Grid x:Name="grid3" HorizontalAlignment="Left" Margin="618,202,0,0" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    <Label Content="Name&#xA;" HorizontalAlignment="Left" Margin="23,174,0,0" VerticalAlignment="Top" Height="38" Width="83" FontSize="20"/>
+                    <Label Content="Email&#xA;" HorizontalAlignment="Left" Margin="23,223,0,0" VerticalAlignment="Top" Height="38" Width="83" FontSize="20"/>
+                    <Label Content="Phone&#xA;" HorizontalAlignment="Left" Margin="23,273,0,0" VerticalAlignment="Top" Height="38" Width="83" FontSize="20"/>
+                    <Label Content="Address&#xA;" HorizontalAlignment="Left" Margin="23,323,0,0" VerticalAlignment="Top" Height="38" Width="83" FontSize="20"/>
+                    <Canvas x:Name="Header"  Width="1920" Height="167" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Canvas  Width="1920" Height="53" Canvas.Left="0" Canvas.Top="69" >
+                            <Border  Width="1920" Height="53" Background="#ff094e7d" BorderBrush="#ff707070" Canvas.Left="0" Canvas.Top="0"  />
+                            <Button x:Name="Button_Courses" Content="COURSES" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Click="Button_Courses_Click" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Canvas.Left="510">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,8,34,8" ContentSource="Content" Height="37" Width="106" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="Button_Cylinders" Content="CYLINDERS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="170" Click="Button_Cylinders_Click" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="Button_Customers" Content="CUSTOMERS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Click="Button_Customers_Click" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="Button_Documents" Content="DOCUMENTS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="53" Background="#FF094E7D" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="340" Click="Button_Documents_Click" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="bdr_main">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,10,4,10" ContentSource="Content" Width="151" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF175C8B"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="bdr_main" Property="Background" Value="#FF0B476F"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Line  X1="0" Y1="0" X2="0" Y2="53.1" Stroke="#ffffffff" Canvas.Left="170"  />
+                            <Line  X1="0" Y1="0" X2="0" Y2="53" Stroke="#ffffffff" Canvas.Left="340"  />
+                            <Line  X1="0" Y1="0" X2="0" Y2="53.1" Stroke="#ffffffff" Canvas.Left="510"  />
+                            <Line  X1="0" Y1="0" X2="0" Y2="53.1" Stroke="#ffffffff" Canvas.Left="680"  />
+                        </Canvas>
+                        <Border  Width="1920" Height="69" BorderBrush="#ff707070" Canvas.Left="0" Canvas.Top="0"  >
+                            <Image Source="Image3.png" Stretch="Fill"/>
+                        </Border>
+                    </Canvas>
+                    <DataGrid x:Name="cylindersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" VerticalScrollBarVisibility="Visible" ItemsSource="{Binding}" Margin="397,172,775,672" RowDetailsVisibilityMode="VisibleWhenSelected" Initialized="CylindersDataGrid_Initialized" Loaded="CylindersDataGrid_Loaded" RowHeight="30" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="cylinderIDColumn" Binding="{Binding CylinderID}" Header="ID" Width="50"/>
+                            <DataGridTextColumn x:Name="cylinder_SpecificationsColumn" Binding="{Binding Cylinder_Specifications}" Header="Cylinder Specifications" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="cylinder_Serial_NumColumn" Binding="{Binding Cylinder_Serial_Num}" Header="Cylinder Serial Num" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="cylinder_LAB_NumColumn" Binding="{Binding Cylinder_LAB_Num}" Header="Cylinder LAB Num" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="cylinder_ManufacturerColumn" Binding="{Binding Cylinder_Manufacturer}" Header="Cylinder Manufacturer" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="cylinder_Manufacture_DateColumn" Binding="{Binding Cylinder_Manufacture_Date}" Header="Cylinder Manufacture Date" Width="SizeToHeader"/>
+                            <DataGridTemplateColumn Header="Details">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="Button_CylinderDetails" Content="Details" Click="ButtonCylinderDetails_Click" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="coursesDataGrid" AutoGenerateColumns="False" IsReadOnly="True" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource coursesViewSource}}" Margin="1163,172,605,672" RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="CoursesDataGrid_Loaded" Width="152">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="courseIDColumn" Binding="{Binding CourseID}" Header="Course ID" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="course_NameColumn" Binding="{Binding Course_Name}" Header="Course Name" Width="SizeToHeader"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Add Course" HorizontalAlignment="Left" Margin="1240,147,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAddCourse_Click" Height="20"/>
+                    <Button Content="Discard" HorizontalAlignment="Left" Margin="299,147,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDiscard_Click" Height="20" RenderTransformOrigin="0.956,1.2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="379,181,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Height="24" Width="13" Foreground="Red" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="111,369,0,0" TextWrapping="Wrap" Text="Fields marked with * are required" VerticalAlignment="Top" Height="17" Width="179" Foreground="Red" FontSize="12"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="31,143,0,0" TextWrapping="Wrap" Text="Customer Details" VerticalAlignment="Top" FontSize="18"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="397,143,0,0" TextWrapping="Wrap" Text="Cylinders" VerticalAlignment="Top" FontSize="18"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="1163,143,0,0" TextWrapping="Wrap" Text="Courses" VerticalAlignment="Top" FontSize="18"/>
+                </Grid>
+            </Frame.Content>
+        </Frame>
+
+    </Grid>
+</Page>
